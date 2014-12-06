@@ -66,4 +66,43 @@ The maximum number of steps is in interval `r interval_with_maximum_number_of_st
 
 ## Imputing missing values
 
+Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs).
+
+```{r}
+na_steps <- table(is.na(activity_set$steps))
+```
+
+There is `r na_steps[2]` rowns with NAs.
+
+Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+
+Create a new dataset that is equal to the original dataset but with the missing data filled in.
+
+```{r}
+no_na_activity_set <- activity_set
+no_na_activity_set$steps[is.na(no_na_activity_set$steps)] <- 
+  average_daily_activity$steps
+```
+
+Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+
+```{r}
+no_na_total_steps_by_day <- aggregate(no_na_activity_set$steps, 
+                         by=list(no_na_activity_set$date), 
+                         FUN=sum, na.rm=TRUE)
+colnames(no_na_total_steps_by_day) <- c("date", "steps")
+hist(no_na_total_steps_by_day$steps, col="blue", 
+     main="Daily Steps", xlab="Number of steps")
+hist(total_steps_by_day$steps, col="red", add=TRUE, 
+     main="Daily Steps", xlab="Number of steps")
+legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
+```
+
+```{r}
+no_na_mean <- mean(no_na_total_steps_by_day$steps)
+no_na_median <- median(no_na_total_steps_by_day$steps)
+```
+
+The mean is `r no_na_mean` and the median is `r no_na_median`.
+
 ## Are there differences in activity patterns between weekdays and weekends?
