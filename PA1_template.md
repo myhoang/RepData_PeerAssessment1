@@ -9,7 +9,7 @@ Load the data (i.e. read.csv()).
 activity <- read.csv('activity.csv')
 ```
 
-Process/transform the data (if necessary) into a format suitable for the analysis.
+Process/transform the data into a format suitable for the analysis.
 
 
 ```r
