@@ -44,9 +44,9 @@ mean <- mean(total_steps_by_day$steps)
 median <- median(total_steps_by_day$steps)
 ``` 
 
-The mean is `r mean`.
+The mean is **`r mean`**.
 
-The median is `r median`.
+The median is **`r median`**.
 
 
 ## What is the average daily activity pattern?
@@ -74,7 +74,7 @@ interval_with_maximum_number_of_steps <-
   average_daily_activity$interval[which.max(average_daily_activity$steps)]
 ```
 
-The maximum number of steps is in interval `r interval_with_maximum_number_of_steps`.
+The maximum number of steps is in interval **`r interval_with_maximum_number_of_steps`**.
 
 
 ## Imputing missing values
@@ -85,10 +85,10 @@ Calculate and report the total number of missing values in the dataset (i.e. the
 na_steps <- table(is.na(activity$steps))
 ```
 
-There is `r na_steps[2]` rowns with NAs.
+There is **`r na_steps[2]`** rowns with NAs.
 
 
-Create a new dataset that is equal to the original dataset but with the missing data filled in with the mean for that 5-minute interval.
+Create a new dataset that is equal to the original dataset, **but with the missing data filled in with the mean for that 5-minute interval**.
 
 ```{r echo=TRUE}
 activity_filled <- activity
@@ -119,13 +119,13 @@ difference_mean <- mean_filled - mean
 difference_median <- median_filled - median
 ```
 
-The mean with the missing data is `r mean_filled`.
+The mean with the missing data is **`r mean_filled`**.
 
-The median with the missing data is `r median_filled`.
+The median with the missing data is **`r median_filled`**.
 
-The difference of mean of the two datasets is `r difference_mean`.
+The difference of mean of the two datasets is **`r difference_mean`**.
 
-The difference of median of the two datasets is `r difference_median`.
+The difference of median of the two datasets is **`r difference_median`**.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

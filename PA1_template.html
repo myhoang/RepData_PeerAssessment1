@@ -88,8 +88,8 @@ hist(total_steps_by_day$steps,
 <p>Calculate and report the mean and median total number of steps taken per day.</p>
 <pre class="r"><code>mean &lt;- mean(total_steps_by_day$steps)
 median &lt;- median(total_steps_by_day$steps)</code></pre>
-<p>The mean is 9354.2295082.</p>
-<p>The median is 10395.</p>
+<p>The mean is <strong>9354.2295082</strong>.</p>
+<p>The median is <strong>10395</strong>.</p>
 </div>
 <div id="what-is-the-average-daily-activity-pattern" class="section level2">
 <h2>What is the average daily activity pattern?</h2>
@@ -111,14 +111,14 @@ plot(average_daily_activity$interval,
 <p>Get which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps.</p>
 <pre class="r"><code>interval_with_maximum_number_of_steps &lt;- 
   average_daily_activity$interval[which.max(average_daily_activity$steps)]</code></pre>
-<p>The maximum number of steps is in interval 835.</p>
+<p>The maximum number of steps is in interval <strong>835</strong>.</p>
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
 <p>Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs).</p>
 <pre class="r"><code>na_steps &lt;- table(is.na(activity$steps))</code></pre>
-<p>There is 2304 rowns with NAs.</p>
-<p>Create a new dataset that is equal to the original dataset but with the missing data filled in with the mean for that 5-minute interval.</p>
+<p>There is <strong>2304</strong> rowns with NAs.</p>
+<p>Create a new dataset that is equal to the original dataset, <strong>but with the missing data filled in with the mean for that 5-minute interval</strong>.</p>
 <pre class="r"><code>activity_filled &lt;- activity
 activity_filled$steps[is.na(activity_filled$steps)] &lt;- 
   average_daily_activity$steps</code></pre>
@@ -139,10 +139,10 @@ legend(&quot;topright&quot;, c(&quot;Filled&quot;, &quot;Not filled&quot;), col=
 median_filled &lt;- median(total_steps_by_day_filled$steps)
 difference_mean &lt;- mean_filled - mean 
 difference_median &lt;- median_filled - median</code></pre>
-<p>The mean with the missing data is 1.076618910^{4}.</p>
-<p>The median with the missing data is 1.076618910^{4}.</p>
-<p>The difference of mean of the two datasets is 1411.959171.</p>
-<p>The difference of median of the two datasets is 371.1886792.</p>
+<p>The mean with the missing data is <strong>1.076618910^{4}</strong>.</p>
+<p>The median with the missing data is <strong>1.076618910^{4}</strong>.</p>
+<p>The difference of mean of the two datasets is <strong>1411.959171</strong>.</p>
+<p>The difference of median of the two datasets is <strong>371.1886792</strong>.</p>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
