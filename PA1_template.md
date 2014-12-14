@@ -38,11 +38,12 @@ Calculate and report the mean and median total number of steps taken per day.
 
 
 ```r
+options(scipen = 1, digits = 2)
 mean <- mean(total_steps_by_day$steps)
 median <- median(total_steps_by_day$steps)
 ```
 
-The mean is **9354.2295082**.
+The mean is **9354.23**.
 
 The median is **10395**.
 
@@ -121,19 +122,20 @@ legend("topright", c("Filled", "Not filled"), col=c("blue", "red"), lwd=10)
 
 
 ```r
+options(scipen = 1, digits = 2)
 mean_filled <- mean(total_steps_by_day_filled$steps)
 median_filled <- median(total_steps_by_day_filled$steps)
 difference_mean <- mean_filled - mean 
 difference_median <- median_filled - median
 ```
 
-The mean with the missing data is **1.0766189\times 10^{4}**.
+The mean with the missing data is **10766.19**.
 
-The median with the missing data is **1.0766189\times 10^{4}**.
+The median with the missing data is **10766.19**.
 
-The difference of mean of the two datasets is **1411.959171**.
+The difference of mean of the two datasets is **1411.96**.
 
-The difference of median of the two datasets is **371.1886792**.
+The difference of median of the two datasets is **371.19**.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

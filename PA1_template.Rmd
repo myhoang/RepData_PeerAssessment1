@@ -40,6 +40,7 @@ hist(total_steps_by_day$steps,
 Calculate and report the mean and median total number of steps taken per day.
 
 ```{r echo=TRUE}
+options(scipen = 1, digits = 2)
 mean <- mean(total_steps_by_day$steps)
 median <- median(total_steps_by_day$steps)
 ``` 
@@ -113,6 +114,7 @@ legend("topright", c("Filled", "Not filled"), col=c("blue", "red"), lwd=10)
 ```
 
 ```{r echo=TRUE}
+options(scipen = 1, digits = 2)
 mean_filled <- mean(total_steps_by_day_filled$steps)
 median_filled <- median(total_steps_by_day_filled$steps)
 difference_mean <- mean_filled - mean 
